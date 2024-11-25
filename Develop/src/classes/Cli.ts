@@ -286,7 +286,7 @@ class Cli {
           console.log(`This truck cannot tow itself`);
           this.performActions();
         } else {
-          truck.tow(answers.VehicleToTow)
+          truck.tow(answers.vehicleToTow)
           this.performActions();
         }
       });
@@ -310,7 +310,7 @@ class Cli {
             'Turn right',
             'Turn left',
             'Reverse',
-            'Tow another vehicle (Truck only)',
+            'Tow',
             'Do a wheelie (Motorbike only)',
             'Select or create another vehicle',
             'Exit',
@@ -375,9 +375,10 @@ class Cli {
               this.vehicles[i].reverse();
             }
           }
-        } else if (answers.action === 'Tow another vehicle (Truck Only') {
+        } else if (answers.action === 'Tow') {
+          console.log(`inside tow`)
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) { 
+            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
               let truck = this.vehicles[i] as Truck
               this.findVehicleToTow(truck);
               return;
@@ -388,10 +389,10 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
               let motorbike = this.vehicles[i] as Motorbike
               motorbike.wheelie();
-              this.performActions();
+              return;
             }
-        }
-      }  else if (answers.action === 'Select or create another vehicle') {
+          }
+        } else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
           return;
