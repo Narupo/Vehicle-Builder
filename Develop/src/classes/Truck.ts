@@ -17,6 +17,7 @@ class Truck extends Vehicle implements AbleToTow {
   towingCapacity: number;
   wheels: Wheel[];
 
+// TODO: Create a constructor that accepts the properties of the Truck class
   constructor(
     vin: string,
   color: string,
@@ -46,7 +47,7 @@ class Truck extends Vehicle implements AbleToTow {
     }
   }
 
-  // TODO: Implement the tow method from the AbleToTow interface
+// TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
     if (vehicle.weight <= this.towingCapacity) {
       console.log(
