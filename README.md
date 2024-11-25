@@ -1,2 +1,2 @@
 # Vehicle-Builder
-An application that uses TypeScript and OOP to build vehicles and allows users to perform actions with said vehicles.
+An application that uses TypeScript and OOP to build and save vehicles to a database. The application also allows users to perform actions with the vehicles stored in the database.
