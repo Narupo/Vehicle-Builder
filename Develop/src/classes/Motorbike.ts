@@ -47,7 +47,7 @@ wheelie(): void {
 
 // TODO: Override the printDetails method from the Vehicle class
 override printDetails(): void {
-  super.printDetails(); // Call parent Vehicle method
+  super.printDetails(); 
 
   console.log(`VIN: ${this.vin}`);
   console.log(`Color: ${this.color}`);
